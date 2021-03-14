@@ -1,0 +1,21 @@
+{
+  "name": "iTesco Sale Highlighter",
+  "version": "1.0",
+  "description": "iTesco Sale Highlighter",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "background": {
+    "scripts": ["extension.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://nakup.itesco.cz/**/*"],
+      "css": ["highlight.css"],
+      "js": ["highlight.js"]
+    }
+  ],
+  "manifest_version": 2
+}
