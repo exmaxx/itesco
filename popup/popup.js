@@ -1,23 +1,25 @@
-const orderDate = document.getElementById('order-date')
-console.log(orderDate)
+const switchEl = document.getElementById('is-override-used')
+const orderDateEl = document.getElementById('order-date-override')
 
-chrome.storage.sync.get('orderDate', (data) => {
-  orderDate.value = data.orderDate
+chrome.storage.sync.get('isOverridedUsed', ({ isOverridedUsed }) => {
+  switchEl.checked = isOverridedUsed
+  orderDateEl.disabled = !isOverridedUsed
 })
 
-orderDate.addEventListener('input', (event) => {
-  console.log('changed!')
-  // NOTE: This is in context of popup.html (not the actual tab HTML)
-  // document.body.style.backgroundColor = 'pink'
-
-  // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  //   chrome.tabs.executeScript(tabs[0].id, {
-  //     // NOTE: This runs in context of actual tab HTML
-  //     // code: 'document.body.style.backgroundColor = "blue";',
-  //     file: 'highlight.js'
-  //   });
-  // });
-
-  chrome.storage.sync.set({ orderDate: event.target.value });
-  console.log(event.target.value);
+chrome.storage.sync.get('orderDateOverride', ({ orderDateOverride }) => {
+  orderDateEl.value = orderDateOverride
 })
+
+switchEl.addEventListener('input', onCheckboxChanged)
+orderDateEl.addEventListener('input', onInputChanged)
+
+function onCheckboxChanged(event) {
+  const { checked } = event.target
+
+  orderDateEl.disabled = !checked
+  chrome.storage.sync.set({ isOverridedUsed: checked })
+}
+
+function onInputChanged(event) {
+  chrome.storage.sync.set({ orderDateOverride: event.target.value })
+}

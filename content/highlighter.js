@@ -1,15 +1,11 @@
-function highlightAll() {
-  // TOOD: Remove.
-  console.log('highlightAll!')
+async function highlightAll() {
+  const orderDateText = await getOrderDate()
 
-  chrome.storage.sync.get('orderDate', ({ orderDate }) => {
-    highlightAllCallback(orderDate)
-  })
+  highlightAllCallback(orderDateText)
 }
 
-function highlightAllCallback (date) {
-  // TOOD: Remove.
-  console.log('highlightAllCallback!')
+function highlightAllCallback (orderDateText) {
+  const orderDate = new Date(orderDateText)
 
   const dateEls = document.querySelectorAll('.dates')
 
@@ -17,10 +13,9 @@ function highlightAllCallback (date) {
     const match = dateEl.textContent.match(/(\d\d)..(\d\d)..(\d\d\d\d)$/)
     const [_, day, month, year] = match
 
-    const checkedDate = new Date(`${year}/${month}/${day}`)
-    const orderDate = new Date(date)
+    const saleDate = new Date(`${year}/${month}/${day}`)
 
-    if (orderDate <= checkedDate) {
+    if (orderDate <= saleDate) {
       dateEl.style.backgroundColor = 'pink'
     } else {
       dateEl.style.textDecoration = 'line-through'

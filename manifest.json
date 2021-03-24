@@ -6,8 +6,12 @@
     "activeTab",
     "declarativeContent",
     "storage",
-    "https://nakup.itesco.cz/*"
+    "*://nakup.itesco.cz/*"
   ],
+  "background": {
+    "scripts": ["background/extension.js"],
+    "persistent": false
+  },
   "page_action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -19,6 +23,7 @@
       "matches": ["https://nakup.itesco.cz/*"],
       "css": ["content/highlighter.css"],
       "js": [
+        "content/dates.js",
         "content/highlighter.js",
         "content/observers.js",
         "content/init.js"

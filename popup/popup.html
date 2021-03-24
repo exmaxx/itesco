@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
-      }
-    </style> -->
+    <link rel="stylesheet" href="popup.css" />
   </head>
 
   <body>
-    Order Date:
-    <input id="order-date" placeholder="yyyy/mm/dd">
-    (Refresh page after change.)
+    <div id="settings">
+      <div>
+        <input id="is-override-used" type="checkbox" />
+        <label for="is-override-used">Use Order Date Override</label>
+      </div>
+
+      <div>
+        <input id="order-date-override" placeholder="yyyy/mm/dd" />
+      </div>
+
+      <div>(Refresh page after change.)</div>
+    </div>
 
     <script src="popup.js"></script>
   </body>
