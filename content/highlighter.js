@@ -15,10 +15,8 @@ function highlightAllCallback (orderDateText) {
 
     const saleDate = new Date(`${year}/${month}/${day}`)
 
-    if (orderDate <= saleDate) {
-      dateEl.style.backgroundColor = 'pink'
-    } else {
-      dateEl.style.textDecoration = 'line-through'
+    if (orderDate >= saleDate) {
+      dateEl.parentNode.style.opacity = '.3'
     }
   }
 }
