@@ -6,9 +6,6 @@ function initContentObserver() {
   const contentEl = document.querySelector('#content')
 
   if (contentEl) {
-    // TODO: Remove.
-    contentEl.style.border = '2px solid red'
-
     const callback = (mutations) => {
       for (const mutation of mutations) {
         for (const node of mutation.addedNodes) {
@@ -41,8 +38,6 @@ function connectMainContentObserver() {
   const mainContentEl = document.querySelector('.main__content')
 
   if (mainContentEl) {
-    mainContentEl.style.border = '2px solid blue'
-
     mainContentObserver.observe(mainContentEl, {
       childList: true,
     })
@@ -60,9 +55,6 @@ function connectProductListObserver() {
   const productListEl = document.querySelector('.product-list')
 
   if (productListEl) {
-    // TODO: Remove.
-    productListEl.style.border = '2px solid pink'
-
     productListObserver.observe(productListEl, {
       attributeFilter: ['data-auto-last-updated'],
     })
