@@ -1,7 +1,12 @@
 {
   "name": "iTesco Sale Highlighter",
-  "version": "1.0",
+  "version": "0.1.0",
   "description": "iTesco Sale Highlighter",
+  "icons": {
+    "16": "images/16.png",
+    "48": "images/48.png",
+   "128": "images/128.png"
+  },
   "permissions": [
     "activeTab",
     "declarativeContent",

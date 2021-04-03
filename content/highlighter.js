@@ -15,7 +15,7 @@ function highlightAllCallback (orderDateText) {
 
     const saleDate = new Date(`${year}/${month}/${day}`)
 
-    if (orderDate >= saleDate) {
+    if (orderDate > saleDate) {
       dateEl.parentNode.style.opacity = '.3'
     }
   }
