@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "iTesco Sale Higlighter",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Makes the real sale highlighted by suppressing sales that are not valid for selected date.",
+    "description": "Description of the extension."
+  }
+}

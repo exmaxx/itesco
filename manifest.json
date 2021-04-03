@@ -1,12 +1,13 @@
 {
-  "name": "iTesco Sale Highlighter",
+  "name": "__MSG_extensionName__",
   "version": "0.1.0",
-  "description": "iTesco Sale Highlighter",
+  "description": "__MSG_extensionDescription__",
   "icons": {
     "16": "images/16.png",
     "48": "images/48.png",
    "128": "images/128.png"
   },
+  "default_locale": "en",
   "permissions": [
     "activeTab",
     "declarativeContent",
@@ -20,8 +21,10 @@
   "page_action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
-      "128": "images/128.png"
-    }
+      "19": "images/19.png",
+      "38": "images/38.png"
+    },
+    "default_title": "__MSG_extensionName__"
   },
   "content_scripts": [
     {
