@@ -9,7 +9,6 @@
   },
   "default_locale": "en",
   "permissions": [
-    "activeTab",
     "declarativeContent",
     "storage",
     "*://nakup.itesco.cz/*"
@@ -20,10 +19,6 @@
   },
   "page_action": {
     "default_popup": "popup/popup.html",
-    "default_icon": {
-      "19": "images/19.png",
-      "38": "images/38.png"
-    },
     "default_title": "__MSG_extensionName__"
   },
   "content_scripts": [
