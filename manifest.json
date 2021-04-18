@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extensionName__",
-  "version": "0.1.1",
+  "version": "0.1.2", 
   "description": "__MSG_extensionDescription__",
   "icons": {
     "16": "images/16.png",
@@ -10,7 +10,6 @@
   "default_locale": "en",
   "permissions": [
     "declarativeContent",
-    "storage",
     "*://nakup.itesco.cz/*"
   ],
   "background": {
