@@ -1,11 +1,11 @@
 {
   "extensionName": {
-    "message": "Zvýraznovač slev pro iTesco CZ (nakup.itesco.cz)",
+    "message": "(Neoficíální) Zvýraznovač slev pro iTesco CZ",
     "description": "Name of the extension."
   },
 
   "extensionDescription": {
-    "message": "Zvýrazňuje slevy, které jsou platné v den objednávky. Potlačuje slevy, které již aktivní nebudou.",
+    "message": "Zvýrazňuje slevy, které budou platné v den objednávky. Potlačuje slevy, které již aktivní nebudou.",
     "description": "Description of the extension."
   }
 }
