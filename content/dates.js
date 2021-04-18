@@ -1,36 +1,4 @@
-async function getOrderDate() {
-  let date = null
-
-  const isOverrideUsed = await getIsOverrideUsed()
-
-  if (isOverrideUsed) {
-    date = await getOrderDateOverride()
-  }
-
-  if (!date) {
-    date = getOrderDateNormal()
-  }
-
-  return date || null
-}
-
-function getIsOverrideUsed() {
-  return new Promise((resolve) => {
-    chrome.storage.sync.get('isOverridedUsed', ({ isOverridedUsed }) => {
-      resolve(isOverridedUsed)
-    })
-  })
-}
-
-function getOrderDateOverride() {
-  return new Promise((resolve) => {
-    chrome.storage.sync.get('orderDateOverride', ({ orderDateOverride }) => {
-      resolve(orderDateOverride)
-    })
-  })
-}
-
-function getOrderDateNormal() {
+function getOrderDate() {
   const tile = document.querySelector('.context-card-date-tile')
 
   if (!tile) return null

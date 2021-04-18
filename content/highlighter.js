@@ -1,5 +1,5 @@
-async function highlightAll() {
-  const orderDateText = await getOrderDate()
+function highlightAll() {
+  const orderDateText = getOrderDate()
 
   highlightAllCallback(orderDateText)
 }
